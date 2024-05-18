@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "fe67259d-91c7-42b9-a972-d265fd2b7c13",
+		"name": "AdyaCare",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Video By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/video/a9df0f66-4f67-4454-ada1-f0c33d9fad9a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"video",
+						"a9df0f66-4f67-4454-ada1-f0c33d9fad9a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSegment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"videoId\": \"a9df0f66-4f67-4454-ada1-f0c33d9fad9a\",\n    \"url\": \"https://www.youtube.com/watch?v=_F8nyUjY-HA\",\n    \"segmentOrder\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/segment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"segment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Choice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"label\": \"Choose Path B\",\n  \"segmentId\": \"6e7dc474-4d69-4e70-bce9-d22ee08f7d3b\",\n  \"segmentChoices\": [\n    {\n      \"nextSegmentId\": \"a7e2977a-c1b0-4d1f-9843-539ec31c94ab\"\n    },\n    {\n      \"nextSegmentId\": \"785b98dc-68bd-4c07-9a6d-16ef2869c3f2\"\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/choice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"choice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSession",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"39027000-01a8-47bb-bb72-4d6ebf13e6db\",\n    \"videoId\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/session",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Interaction",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sessions/4e4a0a5d-1fcb-4674-94cb-14914711bdf5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sessions",
+						"4e4a0a5d-1fcb-4674-94cb-14914711bdf5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"First Video\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/video",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"video"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

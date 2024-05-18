@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: pstgres_cnt
+    image: postgres:12
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=dev-user
+      - POSTGRES_PASSWORD=dev-password
+      - POSTGRES_DB=pst-db
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    volumes:
+      - postgresdata:/data/postgres
+      - postgresdbdata:/var/lib/postgresql/data
+    networks:
+      - pstnet
+
+volumes:
+  postgresdata:
+    driver: local
+  postgresdbdata:
+    driver: local
+
+networks:
+  pstnet:
+    driver: bridge
